@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+
+.button {
+  cursor: pointer;
+  width: 30rem;
+
+  &::after,
+  &::before {
+    background-color: $color-white;
+    border-radius: 1rem;
+    content: '';
+    display: block;
+    height: 1rem;
+    margin: 4rem 0;
+    transition: background-color 0.3s;
+  }
+
+  &:focus,
+  &:hover {
+    &::after,
+    &::before {
+      background-color: $color-primary;
+    }
+  }
+}

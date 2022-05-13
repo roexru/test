@@ -1,0 +1,52 @@
+$fontSizeMap: (
+  s: 14rem,
+  m: 18rem,
+  l: 57rem,
+  xl: 105rem,
+);
+
+$fontSizeMobileMap: (
+  s: 10rem,
+  m: 10rem,
+  l: 25rem,
+  xl: 47rem,
+);
+
+$fontWeightMap: (
+  'medium': 500,
+  'semibold': 600,
+  'bold': bold,
+  'regular': normal,
+);
+
+$lineHeightMap: (
+  s: 17rem,
+  m: 22rem,
+  l: 66rem,
+  xl: 122rem,
+);
+
+$lineHeightMobileMap: (
+  s: 12rem,
+  m: 12rem,
+  l: 29rem,
+  xl: 54rem,
+);
+
+
+@mixin font($size, $weight: 'regular') {
+  font-size: map_get($fontSizeMap, $size);
+  font-weight: map_get($fontWeightMap, $weight);
+  line-height: map_get($lineHeightMap, $size);
+
+  @include mobile {
+    font-size: map_get($fontSizeMobileMap, $size);
+    line-height: map_get($lineHeightMobileMap, $size);
+  }
+}
+
+@mixin mobile() {
+  @media all and (max-width: 640px) {
+    @content;
+  }
+}

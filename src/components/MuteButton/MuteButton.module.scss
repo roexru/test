@@ -1,0 +1,16 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.button {
+  align-items: center;
+  background-color: $color-primary;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 52rem;
+  width: 52rem;
+}
+
+.icon {
+  height: 20rem;
+}

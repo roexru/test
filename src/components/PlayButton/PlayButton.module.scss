@@ -1,0 +1,33 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.button {
+  align-items: center;
+  background-color: $color-primary;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 92rem;
+  width: 92rem;
+
+  @include mobile {
+    background-color: transparent;
+    border: 1rem solid $color-white;
+    height: 28rem;
+    width: 28rem;
+  }
+}
+
+.icon {
+  &_pause {
+    height: 24rem;
+  }
+
+  &_play {
+    height: 16rem;
+
+    @include mobile {
+      height: 10rem;
+    }
+  }
+}

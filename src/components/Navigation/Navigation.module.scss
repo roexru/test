@@ -1,0 +1,27 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.list {
+  display: flex;
+  gap: 40rem;
+
+  &.hovered {
+    .item a {
+      color: $color-gray;
+    }
+  }
+}
+
+.item {
+  @include font('m', 'medium');
+
+  a {
+    color: $color-white;
+    transition: 0.3s color;
+    transition-delay: 0.3s;
+
+    &:focus, &:hover {
+      color: $color-white !important;
+    }
+  }
+}

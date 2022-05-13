@@ -1,0 +1,53 @@
+@import "src/styles/mixins";
+
+@keyframes RotateAnimation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.arrow_icon {
+  bottom: 0;
+  height: 40rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.3s transform;
+  width: 40rem;
+
+  @include mobile {
+    width: 24rem;
+  }
+}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+
+  &:focus, &:hover {
+    .arrow_icon {
+      transform: scale(1.5);
+    }
+
+    .wheel {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.wheel {
+  animation: RotateAnimation infinite linear 8s;
+  width: 200rem;
+  will-change: transform;
+
+  @include mobile {
+    width: 117rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
